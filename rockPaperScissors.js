@@ -61,7 +61,7 @@ function playGame() {
 
     for(let game=0; game<=5; game++) {
         const humanSelection = getHumanChoice();
-const computerSelection = getPcChoice();
+        const computerSelection = getPcChoice();
         playRound(humanSelection,computerSelection);
     }
     
