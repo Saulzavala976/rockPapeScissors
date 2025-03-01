@@ -23,13 +23,6 @@ return c;
 }
 
 
-function getHumanChoice() {
-    
-    let humanChoice = prompt("Chose your move (Rock, Paper or Scissors): ").toLowerCase();
-
-        return humanChoice;
-}
-
 
 
 function playRound(humanChoice, pcChoice) {
@@ -48,23 +41,40 @@ function playRound(humanChoice, pcChoice) {
         console.log(`You lost! ${pcChoice} beats ${humanChoice}`);
    
     }
+    
 }
-
-
 
 let pcScore = 0;
 let humanScore = 0; 
 
+
+
+
 function playGame() {
     
     
-
-    for(let game=0; game<=5; game++) {
+// 5 juegos en total
+/*     for(let game=0; game<=5; game++) {
         const humanSelection = getHumanChoice();
         const computerSelection = getPcChoice();
         playRound(humanSelection,computerSelection);
     }
+     */
+
+    //Metodo para que solo termine cuando uno de los 2 tenga 5 puntos
+    let btnRoca = document.querySelector('#btnRock');
+
+    btnRoca.addEventListener("click", playRound(document.getElementById("btnRock").value,getPcChoice()));
     
+    let btnPaper = document.querySelector('#btnPaper');
+    
+    btnPaper.addEventListener("click", playRound(document.getElementById("btnPaper").value,getPcChoice()));
+    
+    let btnScissors = document.querySelector('#btnScissors');
+    
+    btnScissors.addEventListener("click", playRound(document.getElementById("btnScissors").value,getPcChoice()));
+
+  
     
     if (pcScore > humanScore) {
 
